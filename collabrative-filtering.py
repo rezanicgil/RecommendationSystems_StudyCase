@@ -84,7 +84,7 @@ knn.fit(df.values)
 distances, indices = knn.kneighbors(df.values, n_neighbors=number_neighbors)
 
 # copy df
-df1 = df.copy()
+df1 = df.astype(float)  # Similarity-weighted predictions can be fractional.
 
 # convert user_name to user_index
 user_index = df.columns.tolist().index('user_4')

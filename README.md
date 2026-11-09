@@ -26,6 +26,15 @@ python -m pip install numpy scikit-learn
 python nmf.py
 ```
 
+For the collaborative-filtering example, install pandas in the same environment and run:
+
+```sh
+python -m pip install pandas
+python collabrative-filtering.py
+```
+
+The fixture contains ten users and ten movies. A zero represents an unrated movie. The script keeps observed ratings and estimates missing ones from neighbors using cosine similarity. For `user_4`, the final list starts with `movie_2` (4.00) and `movie_3` (3.50). These values are predictions on the built-in fixture.
+
 ## Decisions and limitations
 
 Nearest neighbors uses observed similarity directly. Factorization compresses the matrix into a chosen number of components. The small matrix makes the transformation easy to inspect. It gives no estimate of recommendation quality on new users. There is no automated test suite or published held-out accuracy benchmark.
